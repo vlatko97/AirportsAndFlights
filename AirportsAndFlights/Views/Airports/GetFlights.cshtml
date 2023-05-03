@@ -1,0 +1,50 @@
+﻿@model AirportsAndFlights.Models.Airport
+
+@{
+    ViewData["Title"] = "GetFlights";
+    var flights = (List<Flight>)ViewData["ListOfFlights"];
+}
+
+<h1>@Model.AirportName</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @("Origin Airport")
+            </th>
+            <th>
+                @("Destination Airport")
+            </th>
+            <th>
+                @("Departure Time")
+            </th>
+            <th>
+                @("Flight Duration")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in flights)
+        {
+            <tr>
+                <td>
+                    @(item.CodeOriginAirport)
+                </td>
+                <td>
+                    @(item.CodeDestinationAirport)
+                </td>
+                <td>
+                    @((@item.DepartureTimeInMinutesSinceMidnight / 60).ToString("00")):@((@item.DepartureTimeInMinutesSinceMidnight % 60).ToString("00"))
+                </td>
+                <td>
+                    @(@item.FlightDurationInMinutes / 60)h@(@item.FlightDurationInMinutes % 60)m
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a asp-action="Index">Back</a>
+</div>

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<AirportsAndFlights.Models.Flight>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>List of Flights</h1>
+
+<p>
+    <a asp-action="Create">Add new Flight</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CodeOriginAirport)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodeDestinationAirport)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartureTimeInMinutesSinceMidnight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlightDurationInMinutes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodeOriginAirport)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodeDestinationAirport)
+            </td>
+            <td>
+                    @((@item.DepartureTimeInMinutesSinceMidnight/60).ToString("00")):@((@item.DepartureTimeInMinutesSinceMidnight%60).ToString("00"))
+            </td>
+            <td>
+                    @(@item.FlightDurationInMinutes/60)h@(@item.FlightDurationInMinutes%60)m
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
