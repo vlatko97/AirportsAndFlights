@@ -28,7 +28,7 @@ Note: Make sure the command 'Update-Database' is run in the Package Manager Cons
 
 Note: Unfortunately, the steps below didn't bring the expected results. 
 
-1. Navigate to the root of the project where the Dockefile is located (./AirportsAndFlights/AirportsAndFlights/)
+1. Navigate to the root of the project where the Dockefile is located (./AirportsAndFlights/)
 
 2. Open terminal and run the following command to create docker image:
 	- docker build -t airportsflightsdockerimg .
