@@ -1,10 +1,11 @@
-# "Airports and Flights" web application
-This Project is build and developed in Visual Studio 2022 as IDE. So the best way to run the application is through Visual Studio.
+# Airports and Flights
+This web application is build and developed in Visual Studio 2022 as IDE. ASP.NET Core Web App (Model-View-Controller) project template is used during the development.
+So the best way to run the application is through Visual Studio.
 
 Note: Make sure the command 'Update-Database' is run in the Package Manager Console (PMC), before hitting Build & Run for first time for the App.
 
 
-### Most significant endpoints according to the reqirements
+### Most significant endpoints according to the requirements
 
 1. /Airports - to get a list of Airports 
 
